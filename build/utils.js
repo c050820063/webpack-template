@@ -35,6 +35,9 @@ exports.createNotifierCallback = () => {
 }
 
 exports.createStyleLoaders = (options) => {
+  const lessResPatterns = [
+    path.resolve(__dirname, '../src/static/less/globalVar.less'),
+  ]
   // base loader definition
   const vueLoader = {
     loader: 'vue-style-loader',
@@ -64,6 +67,13 @@ exports.createStyleLoaders = (options) => {
   }
   const postLoader = {
     loader: 'postcss-loader',
+  }
+  const lessResLoader = {
+    loader: 'style-resources-loader',
+    options: {
+      patterns: lessResPatterns,
+      injector: 'append',
+    },
   }
 
   const cssLoaderSetting = {
@@ -98,6 +108,7 @@ exports.createStyleLoaders = (options) => {
           cssLoaderWithModule,
           postLoader,
           lessLoader,
+          lessResLoader,
         ],
       },
       {
@@ -106,6 +117,7 @@ exports.createStyleLoaders = (options) => {
           cssLoader,
           postLoader,
           lessLoader,
+          lessResLoader,
         ],
       },
     ],

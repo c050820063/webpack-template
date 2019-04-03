@@ -8,7 +8,7 @@ module.exports = {
     proxyTable: {},
     host: 'localhost',
     port: 8080,
-    autoOpenBrowser: true,
+    autoOpenBrowser: false,
     errorOverlay: true,
     notifyOnErrors: true,
     poll: false,

@@ -1,20 +1,18 @@
 <template>
-  <div class="home-wrap">
-    home
+  <div class="cells-wrap">
+    <slot>
+      <div class="cell">123</div>
+    </slot>
   </div>
 </template>
 <script>
-import _ from 'lodash'
 export default {
   name: '',
   data () {
     return {}
   },
-  mounted () {
-    console.log(_)
-  },
 }
 </script>
 <style lang='less'>
-@import '../static/less/test.css';
+@import '../static/less/cell.less';
 </style>
